@@ -164,6 +164,7 @@ namespace BayonettaSE
         {
             Console.WriteLine("Reading console save file");
             difficultybox.Enabled = true; // To remove if PC hex value found for difficulty
+            concheckbox.Enabled = true; // To remove if PC hex value found for items
             //Difficulty @ 0x33
             difficultybox.SelectedIndex = _buffer[0x33];
             //Halos @ 0x0000EF44
@@ -190,6 +191,7 @@ namespace BayonettaSE
             Console.WriteLine("Reading PC save file");
             // Need to disable the difficulty box for PC since it has not been found
             difficultybox.Enabled = false; // To remove if PC hex value found for difficulty
+            concheckbox.Enabled = false; // To remove if PC hex value found for items
             // Halos
             uint rawHalos = HexEditor.ReadAsDecimal(_buffer, pcBinder.GetDataBinding(DataType.Halos));
             Console.WriteLine($"Raw Halos: {rawHalos}");
@@ -208,7 +210,26 @@ namespace BayonettaSE
             }
         }
         
+        private int ComputeChecksum()
+        {
+            // Bayonetta's checksum is located at 0x14 and is 4 bytes.
+            // The checksum spans from 0x18 -> EOF
+            // New checksum variable.
+            int NewChecksum = 0;
+            //Compute checksum @ 0x14 by XORing all int32 values from 0x18 to EOF.
+            int Position = 0x18;
+            do
+            {
+                // XOR: read 4 bytes to make an int32 and XOR it to checksum. Bitconverter reads 4 bytes because int32 = 4 bytes.
+                NewChecksum ^= BitConverter.ToInt32(_buffer, Position);
+                // Move to next 4 bytes.
+                Position += 4;
+            } while (Position < _buffer.Length);
+            return NewChecksum;
+        }
+        
         private void SaveConsoles(){
+            Console.WriteLine("Saving console save file");
             //Difficulty @ 0x33
             _buffer[0x33] = (byte)difficultybox.SelectedIndex;
 
@@ -241,26 +262,9 @@ namespace BayonettaSE
             MessageBox.Show("Saving Complete.\nNew Checksum: 0x" + checksum.ToString("X8"));
         }
 
-        private int ComputeChecksum()
-        {
-            // Bayonetta's checksum is located at 0x14 and is 4 bytes.
-            // The checksum spans from 0x18 -> EOF
-            // New checksum variable.
-            int NewChecksum = 0;
-            //Compute checksum @ 0x14 by XORing all int32 values from 0x18 to EOF.
-            int Position = 0x18;
-            do
-            {
-                // XOR: read 4 bytes to make an int32 and XOR it to checksum. Bitconverter reads 4 bytes because int32 = 4 bytes.
-                NewChecksum ^= BitConverter.ToInt32(_buffer, Position);
-                // Move to next 4 bytes.
-                Position += 4;
-            } while (Position < _buffer.Length);
-            return NewChecksum;
-        }
-
         private void SavePC()
         {
+            Console.WriteLine("Saving PC save file");
             //Difficulty is not found in PC save, so we skip it
 
             //Halo

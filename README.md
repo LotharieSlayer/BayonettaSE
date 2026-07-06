@@ -11,6 +11,7 @@ PC (in development) inspired and copied from previous [type0dev/Bayo1-editor](ht
 PS3 and Wii U maintained by [MarkH221/Bayonetta-Save-Editor](https://github.com/MarkH221/Bayonetta-Save-Editor) forked for C# scripting, interface, and to unify the tool.  
 
 ### PR welcome
+- Checksum verification and fixing for PC platform
 - PC full support (verifying/adapting all hex values from [type0dev/Bayo1-editor](https://github.com/type0dev/Bayo1-editor))
 - Wii U and PS3 full support of [type0dev/Bayo1-editor](https://github.com/type0dev/Bayo1-editor) features
 - Xbox 360 support
@@ -21,7 +22,18 @@ PS3 and Wii U maintained by [MarkH221/Bayonetta-Save-Editor](https://github.com/
 ### Requirements
 - [.NET 4.8.1](https://download.microsoft.com/download/8/1/8/81877d8b-a9b2-4153-9ad2-63a6441d11dd/NDP481-DevPack-ENU.exe)
 
+### Useful infos
+#### General
+- Max halos are `99999999`, max consumables are `99`.
+#### PC
+- `data00` is your first save file, `data01` the second, `data02` the third, etc...
+- `data99` is the autosave/continue file, which is the one that will be loaded when you hit continue in the game.
+- `system_data` is preferences.
+
 ### Why rewriting the save editor?
 - The original PC save editor by [type0dev/Bayo1-editor](https://github.com/type0dev/Bayo1-editor) was written in VB.NET, even if similar, this is a language I don't know and the project was not maintained for a long time, so now outdated and not working anymore...
 - I already know C# and wanted to unify the codebase for all platforms in one project.
 - I NEED HALOS TO BUY ACCESSORIES, NORMAL MODE IS SO FCKG HARD, AND EASY MODE NOT ENJOYABLE BC TOO FRICKIN EASY.
+
+### Want to go fast or not working?
+- Use [Cheat Engine](https://cheatengine.org/) ([mirror here](https://archive.org/details/cheat-engine-7.2)) and scan for the values (halos, items) you want to modify, then change them in memory directly. Benefits: No checksum, so no save file corruption.
