@@ -3,7 +3,7 @@
 Modifies Halos, Difficulty & Items/Consumables.  
 
 ### Warning
-- Always backup your save files before using this tool.
+- Always backup your save files before using this tool **EVEN** if the tool create a .bak of your selected save file.
 
 ### Supported Platforms
 
@@ -11,8 +11,8 @@ PC (in development) inspired and copied from previous [type0dev/Bayo1-editor](ht
 PS3 and Wii U maintained by [MarkH221/Bayonetta-Save-Editor](https://github.com/MarkH221/Bayonetta-Save-Editor) forked for C# scripting, interface, and to unify the tool.  
 
 ### PR welcome
-- PC full support (verifying/adapting all hex values)
-- Wii U and PS3 full support
+- PC full support (verifying/adapting all hex values from [type0dev/Bayo1-editor](https://github.com/type0dev/Bayo1-editor))
+- Wii U and PS3 full support of [type0dev/Bayo1-editor](https://github.com/type0dev/Bayo1-editor) features
 - Xbox 360 support
 - Switch support
 - PS4 support
