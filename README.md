@@ -1,4 +1,4 @@
-# Bayonetta PC, PS3 and Wii U Save Editor
+# Bayonetta Save Editor for PC, PS3 and Wii U
 
 Modifies Halos, Difficulty & Items/Consumables.  
 
