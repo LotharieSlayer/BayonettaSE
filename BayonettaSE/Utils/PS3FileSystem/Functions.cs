@@ -28,7 +28,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
     internal static class Functions
     {

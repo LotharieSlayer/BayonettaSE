@@ -1,6 +1,6 @@
 ﻿namespace BayonettaSE
 {
-    partial class Form1
+    partial class SaveEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveEditorForm));
             this.button3 = new System.Windows.Forms.Button();
             this.halobox = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -151,8 +151,7 @@
             this.wiiUToolStripMenuItem.Name = "wiiUToolStripMenuItem";
             this.wiiUToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.wiiUToolStripMenuItem.Text = "Decrypted/Raw";
-            this.wiiUToolStripMenuItem.ToolTipText = "Select for WiiU/PS3 emulator saves with no platform-specific encryption due to na" +
-    "tural state or save managers handling it.";
+            this.wiiUToolStripMenuItem.ToolTipText = "Select for PC, Wii U or PS3 emulator saves with no platform-specific encryption due to natural state or save managers handling it.";
             this.wiiUToolStripMenuItem.Click += new System.EventHandler(this.DecryptedOpen);
             // 
             // saveToolStripMenuItem
@@ -179,7 +178,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "SaveEditorForm";
             this.Text = "Bayonetta Save Editor";
             ((System.ComponentModel.ISupportInitialize)(this.halobox)).EndInit();
             this.menuStrip1.ResumeLayout(false);

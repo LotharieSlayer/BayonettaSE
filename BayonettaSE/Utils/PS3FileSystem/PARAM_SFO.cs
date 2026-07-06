@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
     public class PARAM_SFO
     {

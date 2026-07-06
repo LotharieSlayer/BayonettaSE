@@ -21,7 +21,7 @@
 
 using System.IO;
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
     public class Ps3File
     {

@@ -24,7 +24,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
     public class Ps3SaveManager
     {

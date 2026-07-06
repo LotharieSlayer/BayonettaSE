@@ -19,23 +19,14 @@
 * *Contact must be made to discuses permission and terms.
 */
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
-    public class SecureFileInfo
+    public enum MessageType
     {
-        public SecureFileInfo(string name, string id, string securefileid, string dischashkey, bool isprotected)
-        {
-            Name = name;
-            GameIDs = id.Trim('[', ']').Split('/');
-            SecureFileID = securefileid;
-            DiscHashKey = dischashkey;
-            Protected = isprotected;
-        }
-
-        public string Name { get; set; }
-        public string[] GameIDs { get; set; }
-        public string SecureFileID { get; set; }
-        public string DiscHashKey { get; set; }
-        public bool Protected { get; set; }
+        Info,
+        Warning,
+        Error
     }
+
+    public delegate void PS3Action(object sender, string message, MessageType type);
 }

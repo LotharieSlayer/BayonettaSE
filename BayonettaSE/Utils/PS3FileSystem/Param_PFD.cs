@@ -25,7 +25,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace PS3FileSystem
+namespace BayonettaSE.Utils.PS3FileSystem
 {
     public class Param_PFD
     {
